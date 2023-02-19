@@ -11,12 +11,12 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "Sensors")
-public class Sensor implements Serializable {
+public class Sensor implements Serializable {   // Если связь не по id, а по значению (name) нужно указывать - implements Serializable
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Integer id;         // использ класс обвертку Integer, так как у int нет Null (присв 0)
 
     @NotBlank
     @Size(min = 3, max = 30, message = "Название серсора должно быть 3-30 символов")
