@@ -8,14 +8,14 @@ import org.hibernate.validator.constraints.Range;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Data       // нужны только Getter/Setter
 @Table(name = "measurements")
 public class Measurement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Integer id;     // исп класс обвертку
 
     @NotNull
     @Range(min = -100, max = 100,message = "Значение от -100 до 100")
@@ -31,7 +31,7 @@ public class Measurement {
     private LocalDateTime measurementDateTime;
 
     @NotNull
-    @ManyToOne
-    @JoinColumn(name = "sensor", referencedColumnName = "name")
+    @ManyToOne          // тип связи
+    @JoinColumn(name = "sensor", referencedColumnName = "name") // указываем по какой колонке
     private Sensor sensor;
 }

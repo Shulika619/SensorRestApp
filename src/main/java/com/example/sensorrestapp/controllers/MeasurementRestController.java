@@ -2,16 +2,11 @@ package com.example.sensorrestapp.controllers;
 
 import com.example.sensorrestapp.dto.MeasurementResponse;
 import com.example.sensorrestapp.dto.MeasurementsDto;
-import com.example.sensorrestapp.dto.SensorDto;
 import com.example.sensorrestapp.models.Measurement;
-import com.example.sensorrestapp.models.Sensor;
-import com.example.sensorrestapp.repositories.MeasurementRepository;
 import com.example.sensorrestapp.services.MeasurementService;
-import com.example.sensorrestapp.services.SensorService;
 import com.example.sensorrestapp.util.MeasurementValidator;
 import com.example.sensorrestapp.util.SensorErrorResponse;
 import com.example.sensorrestapp.util.SensorException;
-import com.example.sensorrestapp.util.SensorValidator;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -27,7 +22,7 @@ import static com.example.sensorrestapp.util.ErrorsUtil.returnErrorsToClient;
 @RestController
 @RequestMapping("/measurements")
 @RequiredArgsConstructor
-public class MeasurementController {
+public class MeasurementRestController {
 
     private final MeasurementService measurementService;
     private final MeasurementValidator measurementValidator;

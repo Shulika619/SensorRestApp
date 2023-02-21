@@ -8,7 +8,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-@Data
+@Data   // нужны только Getter/Setter
 @Entity
 @Table(name = "Sensors")
 public class Sensor implements Serializable {   // Если связь не по id, а по значению (name) нужно указывать - implements Serializable
